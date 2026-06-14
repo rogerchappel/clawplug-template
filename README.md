@@ -1,15 +1,72 @@
 # clawplug-template
 
-Use this template to create an OpenClaw plugin with clawplug.
+Starter template for OpenClaw plugins built with `clawplug`.
 
-## Use this template
+This repository is meant to be copied and renamed before use. It includes a
+typed example plugin, Vitest coverage, a build pipeline, and a release check
+that verifies the generated package contents.
 
-1. Click **Use this template** in GitHub.
-2. Replace the package name, plugin id, and example tool with your integration.
-3. Run:
+## Use This Template
+
+1. Click **Use this template** in GitHub or copy the repository locally.
+2. Replace `clawplug-template` in `package.json` with your package name.
+3. Replace `example-plugin` in `src/plugin.ts` with your plugin id.
+4. Replace the sample `greet` tool with your integration tools.
+5. Replace the local `file:../clawplug` dependency once `clawplug` is available
+   from your chosen package source.
+6. Keep `"private": true` until the generated plugin is ready to publish.
+
+## Local Setup
+
+This template currently expects `clawplug` as a sibling checkout:
+
+```text
+parent/
+  clawplug/
+  clawplug-template/
+```
+
+Build the SDK first, then install and verify the template:
 
 ```sh
-npm install
+cd ../clawplug
+npm ci
+npm run build
+
+cd ../clawplug-template
+npm ci
+npm run release:check
+```
+
+## Example Plugin
+
+`src/plugin.ts` defines a typed plugin with:
+
+- an `auth.apiKey` config section
+- one `greet` tool
+- a minimal `onLoad` lifecycle hook
+- TypeBox parameter schemas
+
+The test suite exercises the plugin through `testPlugin` from `clawplug/test`,
+so template users can copy the test shape for their first real tool.
+
+## Commands
+
+```sh
+npm run typecheck
 npm test
 npm run build
+npm run package:smoke
+npm run release:check
 ```
+
+`release:check` runs type-checking, tests, the build, and `npm pack --dry-run`.
+
+## Release Notes
+
+Do not publish this repository as-is. Before publishing a generated plugin:
+
+- change the package name, repository, bugs URL, and homepage
+- replace the example plugin id, display name, and tool
+- replace the local `file:../clawplug` dependency
+- review the dry-run tarball contents from `npm run package:smoke`
