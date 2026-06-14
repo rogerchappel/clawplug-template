@@ -1,6 +1,7 @@
 {
   "name": "clawplug-template",
   "version": "0.1.0",
+  "private": true,
   "description": "Starter template for OpenClaw plugins built with clawplug.",
   "type": "module",
   "main": "./dist/index.js",
