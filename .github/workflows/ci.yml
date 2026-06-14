@@ -10,10 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          path: clawplug-template
+      - uses: actions/checkout@v4
+        with:
+          repository: rogerchappel/clawplug
+          path: clawplug
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: clawplug-template/package-lock.json
       - run: npm ci
-      - run: npm test
+        working-directory: clawplug
       - run: npm run build
+        working-directory: clawplug
+      - run: npm ci
+        working-directory: clawplug-template
+      - run: npm run release:check
+        working-directory: clawplug-template
