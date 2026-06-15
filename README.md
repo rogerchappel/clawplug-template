@@ -70,3 +70,12 @@ Do not publish this repository as-is. Before publishing a generated plugin:
 - replace the example plugin id, display name, and tool
 - replace the local `file:../clawplug` dependency
 - review the dry-run tarball contents from `npm run package:smoke`
+
+## Release Verification
+
+Before publishing or tagging a release, run the same verification path used by CI:
+
+- `npm run release:check`
+- `npm run package:smoke`
+
+See `docs/release-readiness.md` for the package surface, CLI bins, and reviewer checklist.
