@@ -62,6 +62,10 @@ npm run release:check
 
 `release:check` runs type-checking, tests, the build, and `npm pack --dry-run`.
 
+## Safety Boundaries
+
+This repository is a starter template, not a production plugin as-is. Replace sample tool names, package metadata, credentials, and the local `file:../clawplug` dependency before publishing or deploying a derived plugin, and review the packed tarball before enabling external users.
+
 ## Release Notes
 
 Do not publish this repository as-is. Before publishing a generated plugin:
