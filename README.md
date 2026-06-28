@@ -75,6 +75,10 @@ Do not publish this repository as-is. Before publishing a generated plugin:
 - replace the local `file:../clawplug` dependency
 - review the dry-run tarball contents from `npm run package:smoke`
 
+Use [docs/template-adoption-checklist.md](docs/template-adoption-checklist.md)
+as the handoff checklist after copying the template into a real plugin
+repository.
+
 ## Release Verification
 
 Before publishing or tagging a release, run the same verification path used by CI:
