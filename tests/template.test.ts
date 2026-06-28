@@ -12,7 +12,13 @@ describe('clawplug-template integrity', () => {
   });
 
   it('should include required template files', () => {
-    const requiredFiles = ['README.md', 'LICENSE', 'package.json', 'src/plugin.ts'];
+    const requiredFiles = [
+      'README.md',
+      'LICENSE',
+      'package.json',
+      'src/plugin.ts',
+      'docs/template-adoption-checklist.md',
+    ];
     for (const f of requiredFiles) {
       expect(existsSync(f)).toBe(true);
     }
