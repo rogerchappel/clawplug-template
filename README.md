@@ -53,14 +53,18 @@ so template users can copy the test shape for their first real tool.
 ## Commands
 
 ```sh
+npm run check
+npm run lint
 npm run typecheck
 npm test
 npm run build
+npm run smoke
 npm run package:smoke
 npm run release:check
 ```
 
-`release:check` runs type-checking, tests, the build, and `npm pack --dry-run`.
+`release:check` runs type-checking through the standard check/lint aliases,
+tests, a built import smoke, and the package dry-run.
 
 ## Safety Boundaries
 
