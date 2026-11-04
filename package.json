@@ -46,7 +46,7 @@
     "vitest": "^3.2.4"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20 <25"
   },
   "repository": {
     "type": "git",
